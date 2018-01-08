@@ -1,4 +1,15 @@
 name: Simple Todos
+servers:
+  app:
+    paths:
+      - location: /
+      
+    env:
+      production:
+        domain: todos.looptype.com
+      dev:
+        domain: localhost
+        port: 8080
 packages:
   static:
     type: static
