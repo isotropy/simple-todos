@@ -1,0 +1,21 @@
+name: Simple Todos
+packages:
+  static:
+    type: static
+    dest: /dist/static
+  client:
+    type: bundle
+    output: /dist/static/client.js
+  server:
+    output: /dist/server  
+    connections:
+      webdisk:
+        - path: ./disk.ts
+          server: objects.looptype.com/todos
+      postgres:
+        - path: ./db.ts
+          server: pg1.looptype.com
+      redis:
+        - path: ./redis.ts
+          server: redis1.looptype.com
+  
