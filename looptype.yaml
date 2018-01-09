@@ -1,5 +1,5 @@
 name: Simple Todos
-servers:
+webserver:
   app:
     paths:
       - location: /
@@ -40,6 +40,9 @@ packages:
       - type: redis
         path: ./redis.ts
         db: todoscache
+    ports:
+      - type: TCP
+        port: 8080
   auth:
     build:
       type: typescript
@@ -51,4 +54,7 @@ packages:
       - type: postgres
         path: ./db.ts
         db: authdb
-  
+    ports:
+      - type: TCP
+        port: 8080
+      
