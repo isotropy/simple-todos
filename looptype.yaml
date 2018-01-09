@@ -1,35 +1,50 @@
 name: Simple Todos
-webserver:
-  app:
-    paths:
-      - location: /
-        proxy: 
-      - location: /static
-        root: /dist/static
+version: "1.0" 
+servers:
+  - name: server
+    type: http
     env:
-      todos_production:
-        domain: todos.looptype.com
-      todos_dev:
-        domain: localhost
+      production: 
+        host: todos.looptype.com
+      development: 
+        host: localhost
         port: 8080
-        targetPort: 8080
-packages:
+    packages:
+      - static
+      - client
+      - server
+    locations:
+      - location: /
+        type: nodejs
+        main: /server/index.js
+      - location: /static
+        type: static
+        path: /static
+  - name: auth-server
+    type: http
+    env:
+      production: 
+        host: todos-auth.looptype.com
+      development:
+        host: localhost
+        port: 8081
+    packages:
+      - auth-server
+    locations:
+      - location: /
+        type: nodejs
+        main: /server/index.js        
+builds:
   static:
-    build:
-      type: copy
-      dest: /dist/static
+    type: copy
+    dest: /static
   client:
-    build:
-      type: typescript
-      bundle: yes
-      output: /dist/static/client.js
+    type: typescript
+    bundle: yes
+    output: /static/client.js
   server:
-    build: 
-      type: typescript
-      output: /dist/server  
-    run:
-      type: nodejs
-      main: /dist/server
+    type: typescript
+    output: /server  
     connections:
       - type: webdisk
         path: ./disk.ts
@@ -40,21 +55,10 @@ packages:
       - type: redis
         path: ./redis.ts
         db: todoscache
-    ports:
-      - type: TCP
-        port: 8080
-  auth:
-    build:
-      type: typescript
-      output: /dist/auth  
-    run:
-      type: nodejs
-      main: /dist/auth
+  auth-server:
+    type: typescript
+    output: /auth-server  
     connections:
       - type: postgres
         path: ./db.ts
         db: authdb
-    ports:
-      - type: TCP
-        port: 8080
-      
