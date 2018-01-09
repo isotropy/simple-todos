@@ -1,5 +1,7 @@
 name: Simple Todos
-version: "1.0" 
+schema: "1.0"
+version: "1.0.0"
+git: https://github.com/isotropy/simple-todos
 servers:
   - name: server
     type: http
