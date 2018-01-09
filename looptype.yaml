@@ -3,30 +3,52 @@ servers:
   app:
     paths:
       - location: /
-      
+        proxy: 
+      - location: /static
+        root: /dist/static
     env:
-      production:
+      todos_production:
         domain: todos.looptype.com
-      dev:
+      todos_dev:
         domain: localhost
         port: 8080
+        targetPort: 8080
 packages:
   static:
-    type: static
-    dest: /dist/static
+    build:
+      type: copy
+      dest: /dist/static
   client:
-    type: bundle
-    output: /dist/static/client.js
+    build:
+      type: typescript
+      bundle: yes
+      output: /dist/static/client.js
   server:
-    output: /dist/server  
+    build: 
+      type: typescript
+      output: /dist/server  
+    run:
+      type: nodejs
+      main: /dist/server
     connections:
-      webdisk:
-        - path: ./disk.ts
-          server: objects.looptype.com/todos
-      postgres:
-        - path: ./db.ts
-          server: pg1.looptype.com
-      redis:
-        - path: ./redis.ts
-          server: redis1.looptype.com
+      - type: webdisk
+        path: ./disk.ts
+        disk: todos
+      - type: postgres
+        path: ./db.ts
+        db: todosdb
+      - type: redis
+        path: ./redis.ts
+        db: todoscache
+  auth:
+    build:
+      type: typescript
+      output: /dist/auth  
+    run:
+      type: nodejs
+      main: /dist/auth
+    connections:
+      - type: postgres
+        path: ./db.ts
+        db: authdb
   
