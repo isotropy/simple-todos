@@ -3,13 +3,7 @@ version: "1.0"
 servers:
   - name: server
     type: http
-    env:
-      production: 
-        host: todos.looptype.com
-      development: 
-        host: localhost
-        port: 8080
-    packages:
+    build:
       - static
       - client
       - server
@@ -22,13 +16,7 @@ servers:
         path: /static
   - name: auth-server
     type: http
-    env:
-      production: 
-        host: todos-auth.looptype.com
-      development:
-        host: localhost
-        port: 8081
-    packages:
+    build:
       - auth-server
     locations:
       - location: /
