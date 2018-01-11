@@ -16,14 +16,6 @@ servers:
       - location: /static
         type: static
         path: /static
-  - name: auth-server
-    type: http
-    build:
-      - auth-server
-    locations:
-      - location: /
-        type: nodejs
-        main: /server/index.js        
 builds:
   static:
     type: copy
@@ -45,10 +37,3 @@ builds:
       - type: redis
         path: ./redis.ts
         db: todoscache
-  auth-server:
-    type: typescript
-    output: /auth-server  
-    connections:
-      - type: postgres
-        path: ./db.ts
-        db: authdb
