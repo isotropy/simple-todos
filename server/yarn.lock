@@ -221,11 +221,11 @@ isarray@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
 
-isotropy-db@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/isotropy-db/-/isotropy-db-0.0.10.tgz#cc84f49f52b63108449432b709adfa067d98d9ca"
+isotropy-db@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/isotropy-db/-/isotropy-db-0.0.11.tgz#6b98619b5bc1ee9aae023859f4ae3937a4085544"
   dependencies:
-    lazy-linq "git://github.com/jeswin/lazy-linq"
+    lazy-linq-with-types "^0.0.2"
 
 keygrip@~1.0.2:
   version "1.0.2"
@@ -292,9 +292,9 @@ koa@^2.4.1:
     type-is "^1.5.5"
     vary "^1.0.0"
 
-"lazy-linq@git://github.com/jeswin/lazy-linq":
-  version "1.0.3"
-  resolved "git://github.com/jeswin/lazy-linq#df03bf86bdfb3e0d39d4bfd369a5ecc63fffb18a"
+lazy-linq-with-types@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/lazy-linq-with-types/-/lazy-linq-with-types-0.0.2.tgz#17ee5f7d2de9c2ee34ba95733449bc0d947f667f"
   dependencies:
     babel-runtime "^5.6.17"
 

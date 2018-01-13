@@ -6,10 +6,10 @@ import md5 = require("md5");
 export async function login(ctx: Context) {
   const { username, password } = ctx.params;
   const db = await server.open();
-  const hash = await db.tables.accounts.singleOrDefault(
+  const account = await db.tables.accounts.singleOrDefault(
     a => a.username === username
   );
-  if (hash && hash === md5(password)) {
+  if (account && account.hash === md5(password)) {
     ctx.body = {
       ok: true,
       token: "1234"

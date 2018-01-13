@@ -2,7 +2,7 @@ name: Simple Todos
 schema: "1.0"
 version: "1.0.0"
 git: https://github.com/isotropy/simple-todos
-servers:
+services:
   - name: server
     type: http
     build:
@@ -17,16 +17,16 @@ servers:
         type: static
         path: /static
 builds:
-  static:
+  - name: static
     type: copy
     dest: /static
-  client:
+  - name: client
     type: typescript
     bundle: yes
     output: /static/client.js
-  server:
+  - name: server
     type: typescript
-    output: /server  
+    output: /server
     connections:
       - type: webdisk
         path: ./disk.ts
