@@ -23,7 +23,7 @@ export async function login(ctx: Context) {
   }
 }
 
-export async function logout(ctx, next) {
+export async function logout(ctx: Context) {
   return {
     ok: true
   };
