@@ -2,6 +2,28 @@
 # yarn lockfile v1
 
 
+babel-runtime@^5.6.17:
+  version "5.8.38"
+  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-5.8.38.tgz#1c0b02eb63312f5f087ff20450827b425c9d4c19"
+  dependencies:
+    core-js "^1.0.0"
+
+core-js@^1.0.0:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
+
+isotropy-db@0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/isotropy-db/-/isotropy-db-0.0.11.tgz#6b98619b5bc1ee9aae023859f4ae3937a4085544"
+  dependencies:
+    lazy-linq-with-types "^0.0.2"
+
 isotropy-redis@^0.0.14:
   version "0.0.14"
   resolved "https://registry.yarnpkg.com/isotropy-redis/-/isotropy-redis-0.0.14.tgz#ec24b9a82d4f5454df105c3cf41bd0e4d2fe3018"
+
+lazy-linq-with-types@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/lazy-linq-with-types/-/lazy-linq-with-types-0.0.2.tgz#17ee5f7d2de9c2ee34ba95733449bc0d947f667f"
+  dependencies:
+    babel-runtime "^5.6.17"

@@ -1,16 +1,12 @@
-import Koa from "koa";
-import Router from "koa-router"
-
 import auth from "./auth";
 import todos from "./todos";
 
-const app = new Koa();
+export default [
+  ["post", "/auth/login", auth.login],
+  ["post", "/auth/logout", auth.logout],
+  ["get", "/todos", todos.getAll],
+  ["get", "/todos/:id", todos.get],
+  ["post", "/todos", todos.create],
+  ["del", "/todos/:id", todos.remove]
+];
 
-const router = new Router();
-router.post("/auth/login", auth.login);
-router.post("/auth/logout", auth.logout);
-
-router.get("/todos", todos.getAll);
-router.get("/todos/:id", todos.get);
-router.post("/todos", todos.create);
-router.del("/todos/:id", todos.remove);
