@@ -221,11 +221,15 @@ isarray@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
 
-isotropy-db@0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/isotropy-db/-/isotropy-db-0.0.11.tgz#6b98619b5bc1ee9aae023859f4ae3937a4085544"
+isotropy-db@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/isotropy-db/-/isotropy-db-0.0.12.tgz#7889410678c8d05371da21ba4cee6fc67f44c8a6"
   dependencies:
     lazy-linq-with-types "^0.0.2"
+
+isotropy-redis@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/isotropy-redis/-/isotropy-redis-0.0.14.tgz#ec24b9a82d4f5454df105c3cf41bd0e4d2fe3018"
 
 keygrip@~1.0.2:
   version "1.0.2"

@@ -4,36 +4,33 @@ version: "1.0.0"
 git: https://github.com/isotropy/simple-todos
 services:
   - name: server
+    nodes: 2
     type: http
-    build:
+    modules:
       - static
       - client
       - server
     locations:
       - location: /
         type: nodejs
-        main: /server/index.js
+        main: server/dist/index.js
       - location: /static
         type: static
-        path: /static
-builds:
+        path: static
+      - location: /client
+        type: static
+        path: client/dist
+modules:
   - name: static
-    type: copy
-    dest: /static
   - name: client
-    type: typescript
-    bundle: yes
-    output: /static/client.js
   - name: server
-    type: typescript
-    output: /server
     connections:
       - type: webdisk
-        path: ./disk.ts
+        path: src/disk.ts
         disk: todos
       - type: postgres
-        path: ./db.ts
+        path: src/db.ts
         db: todosdb
       - type: redis
-        path: ./redis.ts
+        path: src/redis.ts
         db: todoscache

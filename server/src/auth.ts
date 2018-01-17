@@ -24,7 +24,7 @@ export async function login(ctx: Context) {
 }
 
 export async function logout(ctx: Context) {
-  return {
+  ctx.body = {
     ok: true
-  };
+  }
 }
