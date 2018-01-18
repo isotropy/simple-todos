@@ -16,6 +16,6 @@ export default function () {
   
   const app = new Koa();
   app.use(router.routes());
-  
+
   return app;  
 }
