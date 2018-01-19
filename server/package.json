@@ -1,15 +1,11 @@
 {
   "name": "simple-todos",
   "dependencies": {
+    "@types/md5": "^2.1.32",
     "isotropy-db": "^0.0.12",
-    "isotropy-redis": "^0.0.14",
-    "koa": "^2.4.1",
-    "koa-router": "^7.3.0",
+    "isotropy-redis": "^0.0.15",
+    "isotropy-webdisk": "^0.0.7",
+    "isotropy-webserver": "^0.0.4",
     "md5": "^2.2.1"
-  },
-  "devDependencies": {
-    "@types/koa": "^2.0.43",
-    "@types/koa-router": "^7.0.27",
-    "@types/md5": "^2.1.32"
   }
 }

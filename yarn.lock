@@ -13,6 +13,12 @@ any-promise@^1.1.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/any-promise/-/any-promise-1.3.0.tgz#abc6afeedcea52e809cdc0376aed3ce39635d17f"
 
+babel-runtime@^5.6.17:
+  version "5.8.38"
+  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-5.8.38.tgz#1c0b02eb63312f5f087ff20450827b425c9d4c19"
+  dependencies:
+    core-js "^1.0.0"
+
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
@@ -44,6 +50,10 @@ cookies@^0.7.1, cookies@~0.7.0:
   dependencies:
     depd "~1.1.1"
     keygrip "~1.0.2"
+
+core-js@^1.0.0:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
 debug@*, debug@^3.1.0:
   version "3.1.0"
@@ -127,6 +137,20 @@ isarray@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
 
+isotropy-db@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/isotropy-db/-/isotropy-db-0.0.12.tgz#7889410678c8d05371da21ba4cee6fc67f44c8a6"
+  dependencies:
+    lazy-linq-with-types "^0.0.2"
+
+isotropy-redis@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/isotropy-redis/-/isotropy-redis-0.0.15.tgz#8ae02517341dcb66ad86f665ef2719aad96424ad"
+
+isotropy-webdisk@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/isotropy-webdisk/-/isotropy-webdisk-0.0.7.tgz#5462d37c722415842ca354ab090ebc5a16ffc49f"
+
 isotropy-webserver@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/isotropy-webserver/-/isotropy-webserver-0.0.1.tgz#1646e7984252557312ba03ab61119d89d90b3262"
@@ -208,6 +232,12 @@ koa@^2.4.1:
     statuses "^1.2.0"
     type-is "^1.5.5"
     vary "^1.0.0"
+
+lazy-linq-with-types@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/lazy-linq-with-types/-/lazy-linq-with-types-0.0.2.tgz#17ee5f7d2de9c2ee34ba95733449bc0d947f667f"
+  dependencies:
+    babel-runtime "^5.6.17"
 
 media-typer@0.3.0:
   version "0.3.0"
